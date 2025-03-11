@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCE Server - Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .shop-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background-color: #2563eb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            width: 200px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .button {
+            background-color: #3b82f6;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #2563eb;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background-color: #1d4ed8;
+        }
+        nav {
+
+  top: 0;
+  width: 100%;
+  background-color: #1b1f38;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+
+}
+
+nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  color: #121212;
+  background-color: #00f0ff;
+}
+
+    </style>
+</head>
+<body>
+    <h1>MCE Server Shop</h1>
+      <nav>
+    <a href="index.html">Home</a>
+  </nav>
+    <div class="shop-container">
+        <div class="card">
+            <h2>VIP Rank</h2>
+            <p>$3</p>
+            <button class="button" onclick="showPopup('VIP Rank')">Buy Now</button>
+        </div>
+        <div class="card">
+            <h2>2 weeks of pro pass</h2>
+            <p>$1</p>
+            <button class="button" onclick="showPopup('the pro pass')">Buy Now</button>
+        </div>
+        <div class="card">
+            <h2>2k points</h2>
+            <p>$1</p>
+            <button class="button" onclick="showPopup('points')">Buy Now</button>
+        </div>
+        <div class="card">
+            <h2>20k points</h2>
+            <p>$5</p>
+            <button class="button" onclick="showPopup('points')">Buy Now</button>
+        </div>
+        <div class="card">
+            <h2>100k points</h2>
+            <p>$15</p>
+            <button class="button" onclick="showPopup('points')">Buy Now</button>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <p id="popup-text"></p>
+        <a id="discord-link" href="https://discord.com" target="_blank">
+            <button>DM Charles or Maks on Discord</button>
+        </a>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function showPopup(productName) {
+            document.getElementById('popup-text').innerText = `Buy ${productName} by DMing Charles or Maks on Discord!`;
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
