@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Minecraft PVP Server</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 15px;
+      background: #4caf50;
+      color: #ffffff;
+      text-shadow: 2px 2px 3px #000;
+    }
+
+    .section {
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 900px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .section h2 {
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      margin: 10px auto;
+      border: 2px solid #4caf50;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    button {
+      background: #ff9800;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background: #e68a00;
+      transform: scale(1.1);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #333;
+      padding: 20px;
+      border: 2px solid #ff9800;
+      border-radius: 10px;
+      z-index: 1000;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .popup.visible {
+      display: block;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .discord-btn {
+      background: #7289da;
+      font-size: 18px;
+    }
+   
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1b1f38;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  color: #121212;
+  background-color: #00f0ff;
+}
+
+body {
+  padding-top: 90px; 
+}
+
+  </style>
+</head>
+<body>
+  <h1>MCE Minecraft PVP Server</h1>
+  <nav>
+    <a href="#minigames">Minigames</a>
+    <a href="#discord">Discord</a>
+    <a href="#vip">VIP</a>
+    <a href="#pro">Propass</a>
+    <a href="#work">Work with Us</a>
+  </nav>
+  <div class="section" id="minigames">
+    <h2>Minigames</h2>
+    <div class="card" onclick="showPopup('popup-spleef')">
+      <h3>Pillar Battles</h3>
+      <p></p>
+    </div>
+    <div class="card" onclick="showPopup('popup-bedwars')">
+      <h3>Bed Wars</h3>
+      <p></p>
+    </div>
+    <div class="card" onclick="showPopup('popup-ctf')">
+      <h3>Sword Battles</h3>
+      <p></p>
+    </div>
+
+    <div class="card" onclick="showPopup('popup-archery')">
+      <h3>Archery Battles</h3>
+      <p></p>
+    </div>
+
+    <div class="card" onclick="showPopup('popup-target')">
+      <h3>Target Game</h3>
+      <p></p>
+    </div>
+    <div class="card" onclick="showPopup('popup-target')">
+      <h3>Prkour</h3>
+      <p></p>
+    </div>
+ 
+</div>
+
+  <div id="popup-spleef" class="popup">
+    <h3>Pillar Battles</h3>
+    <p>Battle with on pillars with only 2 stacks of wool and a sword. Beware! The map resets every minute!</p>
+    <button onclick="closePopup('popup-spleef')">Close</button>
+  </div>
+  <div id="popup-bedwars" class="popup">
+    <h3>Bed Wars</h3>
+    <p>You know what bedwars is! Coming soon!</p>
+    <button onclick="closePopup('popup-bedwars')">Close</button>
+  </div>
+  <div id="popup-ctf" class="popup">
+    <h3>Slap Battles</h3>
+    <p>Battle on a small arena with no items. Don't fall!</p>
+    <button onclick="closePopup('popup-ctf')">Close</button>
+  </div>
+   <div id="popup-archery" class="popup">
+    <h3>Pillar Battles</h3>
+    <p>Battle with on pillars with only 2 stacks of wool and a sword. Beware! The map resets every minute!</p>
+    <button onclick="closePopup('popup-archery')">Close</button>
+  </div>
+ 
+ <div id="popup-target" class="popup">
+    <h3>Pillar Battles</h3>
+    <p>Battle with on pillars with only 2 stacks of wool and a sword. Beware! The map resets every minute!</p>
+    <button onclick="closePopup('popup-target')">Close</button>
+  </div>
+  <div class="section" id="vip">
+    <h2>VIP Perks ($3 one time)</h2>
+    <p>Vip's recieve exclusive benifits such as: </p>
+     <ul>
+      <li><strong>Extra Points!</strong> More in-game stuff!</li>
+      <li><strong>Exclusive maps </strong> Get acsess to new games and maps</li>
+      <li><strong>Badges in discord </strong> Cool reactions and basges just for you</li>
+      <li><strong>Exclusive Chat </strong>VIP only chat in discord</li>
+    </ul>
+  </div>
+
+  <div class="section" id="pro">
+    <h2>Pro Pass Perks (Cost $1 per 2 weeks)</h2>
+    <div id="pro-pass">
+      <p id="pro-pass-text">cool</p>
+      <button onclick="changeSlide(-1)" id="prev-pro" disabled>&lt;</button>
+      <button onclick="changeSlide(1)" id="next-pro">&gt;</button>
+    </div>
+    <h2> To buy VIP or pass DM Charles (chalzeebaby) on discord!</h2>
+  </div>
+
+  <div class="section" id="discord">
+    <h2>Discord</h2>
+    <button class="discord-btn" onclick="window.open('https://discord.com', '_blank')">Join Our Discord</button>
+  </div>
+
+ 
+
+  <div class="section" id="work">
+    <h2>Work for Us</h2>
+    <p>We're always looking for enthusiastic players to join our team and help create a better experience for everyone!</p>
+    <div class="work-cards">
+      <div class="work-card">
+        <h3>Moderators</h3>
+        <p>Ensure rules are followed to maintain harmony.</p>
+        <p><strong>Availability:</strong> Not Available</p>
+      </div>
+      <div class="work-card">
+        <h3>Builders</h3>
+        <p>Design stunning maps and minigame structures.</p>
+        <p><strong>Availability:</strong> Available</p>
+      </div>
+      <div class="work-card">
+        <h3>Developers</h3>
+        <p>Create and test exciting game features and fix bugs.</p>
+        <p><strong>Availability:</strong> Available</p>
+      </div>
+    </div>
+    <p>Apply on our <a href="https://discord.com" target="_blank">Discord server</a> to get started!</p>
+  </div>
+
+  <div class="section">
+    <h2>Join Code</h2>
+    <p>Use the live join code to hop into our server instantly!</p>
+    <div id="join-code">
+      <strong>Code:</strong> <span id="live-code">CODE NOT AVAILABLE</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Help Section</h2>
+    <p>Need assistance? We’ve got you covered!</p>
+    <ul>
+      <li><strong>Can't join the world? </strong>DM Maks (mickeymouseclubhouse1) on discord to fix this.</li>
+      <li><strong>Contact Mods: </strong> DM a moderator on Discord for support.</li>
+      <li><strong>Report Issues: </strong> Report bugs and rule breakers on discord</li>
+    </ul>
+  </div>
+
+ <div class="section">
+    <h2>How points work: </h2>
+    <p>Points are used to buy in game items, flex and get exclusive maps and events!</p>
+    <div id="join-code">
+      <h2> To buy points DM Charles or Maks! </h2>
+    </div>
+  </div>
+
+  <script>
+    let proPassIndex = 0;
+    const proPassPerks = [
+      "Even more points!",
+      "Even more points!",
+      "Multiplier rolls",
+      "Special badge"
+    ];
+
+    function changeSlide(direction) {
+      proPassIndex += direction;
+      document.getElementById('pro-pass-text').innerText = proPassPerks[proPassIndex];
+
+      document.getElementById('prev-pro').disabled = proPassIndex === 0;
+      document.getElementById('next-pro').disabled = proPassIndex === proPassPerks.length - 1;
+    }
+
+    function showPopup(id) {
+      document.getElementById(id).classList.add('visible');
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup(id) {
+      document.getElementById(id).classList.remove('visible');
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
